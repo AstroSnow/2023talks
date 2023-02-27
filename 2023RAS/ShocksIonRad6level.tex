@@ -51,6 +51,7 @@
 \begin{column}{0.5\textwidth}
 \begin{itemize}
     \item Magnetic reconnection is important for flares.
+    \item Nanoflares in the chromosphere
     \item Shocks are common features of magnetic reconnection (Petschek1964, Shibyama+2015).
     \item Chromosphere is partially ionised - ions and neutrals follow different equations.
     \item Two-fluid shocks not well understood.
@@ -185,9 +186,10 @@ Conservative equations (e.g., two-fluid with thermal collisions) leads to MHD sh
 \begin{columns}
 \begin{column}{0.3\textwidth}
 \begin{itemize}
-\item Two-fluid model - ion+electron plasma, and bulk neutral fluid.
+%\item Two-fluid model - ion+electron plasma, and bulk neutral fluid.
 \item 5 levels of neutral hydrogen + continuum/ionised plasma.
 \item Assume all neutral hydrogen levels move as one.
+\item Optically thick approximation for Lyman transitions.
 \item Leenaarts+2007, Johnson1972, Sollum1999
 \end{itemize}
 \end{column}
@@ -197,13 +199,13 @@ Conservative equations (e.g., two-fluid with thermal collisions) leads to MHD sh
     %     \hspace{2cm}+ \rho_{\rm{p}} (R_{\rm{p},1}+R_{\rm{p},2}+R_{\rm{p},3}+R_{\rm{p},4}+R_{\rm{p},5}) \\
     %     \hspace{1.4cm} = \rho_p \Gamma_{\rm rec,c} + \rho_p \Gamma_{\rm rec,r}
     \Gamma_{\rm rec} \rho_{\rm p} = \rho_{\rm p} (\hat{C}_{\rm{p},1}+\hat{C}_{\rm{p},2}+\hat{C}_{\rm{p},3}+\hat{C}_{\rm{p},4}+\hat{C}_{\rm{p},5})/\hat{\Gamma} \nonumber \\
-        \hspace{1.2cm}+ \rho_{\rm{p}} (\hat{R}_{\rm{p},1}+\hat{R}_{\rm{p},2}+\hat{R}_{\rm{p},3}+\hat{R}_{\rm{p},4}+\hat{R}_{\rm{p},5})/\hat{\Gamma} \\
-        \hspace{1.2cm} = \rho_{\rm p} (\hat{\Gamma}_{\rm rec,col} + \hat{\Gamma}_{\rm rec,rec})/\hat{\Gamma}
+        \hspace{1.2cm}+ \rho_{\rm{p}} (\hat{R}_{\rm{p},1}+\hat{R}_{\rm{p},2}+\hat{R}_{\rm{p},3}+\hat{R}_{\rm{p},4}+\hat{R}_{\rm{p},5})/\hat{\Gamma} \nonumber \\
+        \hspace{1.2cm} = \rho_{\rm p} (\hat{\Gamma}_{\rm rec,col} + \hat{\Gamma}_{\rm rec,rec})/\hat{\Gamma} \nonumber
 \end{gather}
 \begin{gather}
     \Gamma_{\rm ion} \rho_{\rm{n}} = (\rho_{\rm{n}1} \hat{C}_{1,\rm{p}}+\rho_{n2}\hat{C}_{2,\rm{p}}+\rho_{\rm{n}3}\hat{C}_{3,\rm{p}}+\rho_{\rm{n}4}\hat{C}_{4,\rm{p}}+\rho_{\rm{n}5}\hat{C}_{5,\rm{p}})/\hat{\Gamma} \nonumber \\  
-    \hspace{1cm}+(\rho_{\rm{n}1}\hat{R}_{1,\rm{p}}+\rho_{\rm{n}2}\hat{R}_{2,\rm{p}}+\rho_{\rm{n}3} \hat{R}_{3,\rm{p}}+\rho_{\rm{n}4}\hat{R}_{4,\rm{p}}+\rho_{\rm{n}5}\hat{R}_{5,\rm{p}})/\hat{\Gamma} \\
-    \hspace{1cm} = \rho_{\rm{n}} (\hat{\Gamma}_{\rm ion,col} + \hat{\Gamma}_{\rm ion,rad})/\hat{\Gamma}
+    \hspace{1cm}+(\rho_{\rm{n}1}\hat{R}_{1,\rm{p}}+\rho_{\rm{n}2}\hat{R}_{2,\rm{p}}+\rho_{\rm{n}3} \hat{R}_{3,\rm{p}}+\rho_{\rm{n}4}\hat{R}_{4,\rm{p}}+\rho_{\rm{n}5}\hat{R}_{5,\rm{p}})/\hat{\Gamma}  \nonumber\\
+    \hspace{1cm} = \rho_{\rm{n}} (\hat{\Gamma}_{\rm ion,col} + \hat{\Gamma}_{\rm ion,rad})/\hat{\Gamma} \nonumber
 \end{gather}
 \end{column}
 \end{columns}
@@ -225,32 +227,128 @@ Conservative equations (e.g., two-fluid with thermal collisions) leads to MHD sh
 \end{gather}
 \end{frame}
 
-\begin{frame}{Ionisation energy losses and recombination energy gains}
+% \begin{frame}{Ionisation energy losses and recombination energy gains}
+% \begin{columns}
+% \begin{column}{0.4\textwidth}
+% \begin{itemize}
+%     \item Ionisation potential term: macroscopic energy lost during collisional ionisation. %Requires a heating term to balance.
+%     \item Similar heating during collisional recombination.
+%     \item Self-consistent heating/cooling mechanism.
+%     \item Neutral level populations solved at each time step using excitation/de-excitation rates.
+% %    \item We perform 1D two-fluid simulations of ionisation, recombination and ionisation potential terms in a slow-mode shock.
+% \end{itemize}
+% \end{column}
+% \begin{column}{0.6\textwidth}
+% \begin{gather}
+%     \hat{I}_{\rm ion}= \Sigma \hat{n}_i \hat{C}_{i{\rm p}} E_i \\
+%     \hat{I}_{\rm exc}= \Sigma \hat{n}_1 \hat{C}_{1u} (E_u-E_1) + \Sigma \hat{n}_2 \hat{C}_{2u} (E_u-E_2) \nonumber \\
+%     \hspace{1cm} + \Sigma \hat{n}_3 \hat{C}_{3u} (E_u-E_3) + \hat{n}_4 \hat{C}_{4,5} (E_5-E_4)  \\
+%     \phi_{I}=(\hat{I}_{\rm{ion}}+\hat{I}_{\rm{exc}})/\hat{\phi} 
+% \end{gather}
+% \begin{gather}
+%     \hat{R}_{\rm rec}= \Sigma \hat{n}_{\rm p} \hat{C}_{{\rm p}i} E_i \\
+%     \hat{R}_{\rm dex}= \Sigma \hat{n}_5 \hat{C}_{5l} (E_l-E_5) + \Sigma \hat{n}_4 \hat{C}_{l4} (E_l-E_4)  \nonumber \\
+%     \hspace{1cm} + \Sigma \hat{n}_3 \hat{C}_{l3} (E_3-E_l) + \hat{n}_2 \hat{C}_{2,1} (E_1-E_2)  \\
+%     \phi_{R}=(\hat{R}_{\rm rec}+\hat{R}_{\rm dex})/\hat{\phi} 
+% \end{gather}
+% \end{column}
+% \end{columns}
+% \end{frame}
+
+
+\begin{frame}{Numerical model}
 \begin{columns}
-\begin{column}{0.4\textwidth}
-\begin{itemize}
-    \item Ionisation potential term: macroscopic energy lost during collisional ionisation. %Requires a heating term to balance.
-    \item Similar heating during collisional recombination.
-    \item Self-consistent heating/cooling mechanism.
-    \item Neutral level populations solved at each time step using excitation/de-excitation rates.
-%    \item We perform 1D two-fluid simulations of ionisation, recombination and ionisation potential terms in a slow-mode shock.
-\end{itemize}
+\begin{column}{0.5\textwidth}
+\begin{enumerate}
+\item 1D shocks in two-fluid partially-ionised plasma using (P\underline{I}P) code.
+\item Investigate shock substructure.
+\item Initial conditions produce switch-off slow-mode shock.
+\item Initial level populations determined by reference electron number density and temperature
+\item Equilibrium recombination timescale set to $10^{-5}$ of collisional timestep.
+\item 512000 grid cells, 1st order HLLD solver, explicit integration of source terms.
+\end{enumerate}
 \end{column}
-\begin{column}{0.6\textwidth}
-\begin{gather}
-    \hat{I}_{\rm ion}= \Sigma \hat{n}_i \hat{C}_{i{\rm p}} E_i \\
-    \hat{I}_{\rm exc}= \Sigma \hat{n}_1 \hat{C}_{1u} (E_u-E_1) + \Sigma \hat{n}_2 \hat{C}_{2u} (E_u-E_2) \nonumber \\
-    \hspace{1cm} + \Sigma \hat{n}_3 \hat{C}_{3u} (E_u-E_3) + \hat{n}_4 \hat{C}_{4,5} (E_5-E_4)  \\
-    \phi_{I}=(\hat{I}_{\rm{ion}}+\hat{I}_{\rm{exc}})/\hat{\phi} 
-\end{gather}
-\begin{gather}
-    \hat{R}_{\rm rec}= \Sigma \hat{n}_{\rm p} \hat{C}_{{\rm p}i} E_i \\
-    \hat{R}_{\rm dex}= \Sigma \hat{n}_5 \hat{C}_{5l} (E_l-E_5) + \Sigma \hat{n}_4 \hat{C}_{l4} (E_l-E_4)  \nonumber \\
-    \hspace{1cm} + \Sigma \hat{n}_3 \hat{C}_{l3} (E_3-E_l) + \hat{n}_2 \hat{C}_{2,1} (E_1-E_2)  \\
-    \phi_{R}=(\hat{R}_{\rm rec}+\hat{R}_{\rm dex})/\hat{\phi} 
-\end{gather}
+\begin{column}{0.5\textwidth}
+\begin{eqnarray}
+B_x &=& 0.1  \nonumber\\
+B_y &=& -1.0 (x>0), 1.0 (x<0) \nonumber \\
+\rho _n &=& \xi _n \rho _{tot} \nonumber \\
+\rho _p &=& \xi _i \rho _{tot} = (1- \xi _n) \rho _{tot} \nonumber \\
+P_n &=& \frac{\xi _n}{\xi_n + 2 \xi _i} P_{tot} =  \frac{\xi _n}{\xi_n + 2 \xi _i} \beta \frac{B_0 ^2}{2} \nonumber \\
+P_p &=& \frac{2 \xi _i}{\xi_n + 2 \xi _i} P_{tot} =  \frac{2 \xi _i}{\xi_n + 2 \xi _i} \beta \frac{B_0 ^2}{2} \nonumber
+\end{eqnarray}
 \end{column}
 \end{columns}
+\end{frame}
+
+\begin{frame}{Numerical simulation - upper chromosphere}
+\begin{columns}
+\begin{column}{0.8\textwidth}
+\begin{figure}
+    %\centering
+    \includegraphics[width=0.95\linewidth,clip=true,trim=0.9cm 0.8cm 0.9cm 0.8cm]{Figures/contextplot.png}
+    %\caption{Upper-chromosphere case showing the $v_x$ velocity (top left), $B_y$ magnetic field (top right), temperature (lower left) and density (lower right). For panel c, the reference temperature $T_0=6220$.}
+    \label{fig:upperchromocontext}
+\end{figure}
+\end{column}
+\begin{column}{0.2\textwidth}
+%\begin{itemize}
+    $T_0=6220$, $n_e=7.5\times 10^{16}$, $\xi_n=0.87$
+%\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Shock substructure - upper chromosphere}
+\begin{columns}
+\begin{column}{0.8\textwidth}
+\begin{figure}
+    %\centering
+    \includegraphics[width=0.95\linewidth,clip=true,trim=1.2cm 0.8cm 0.9cm 0.8cm]{Figures/shocksub2_plot_upc.png}
+    %\caption{Upper-chromosphere case showing the $v_x$ velocity (top left), $B_y$ magnetic field (top right), temperature (lower left) and density (lower right). For panel c, the reference temperature $T_0=6220$.}
+    \label{fig:upperchromocontext}
+\end{figure}
+\end{column}
+\begin{column}{0.2\textwidth}
+%\begin{itemize}
+    $T_0=6220$, $n_e=7.5\times 10^{16}$, $\xi_n=0.87$
+%\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}{Cooling through the shock}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.95\linewidth,clip=true,trim=1.2cm 0.3cm 1.6cm 1.8cm]{Figures/tcomp_plot.png} \\
+    \includegraphics[width=0.95\linewidth,clip=true,trim=0.4cm 0.3cm 0.1cm 1.8cm]{Figures/tcomp_ion_plot.png}
+\end{figure}
+\end{column}
+\begin{column}{0.42\textwidth}
+\begin{itemize}
+    \item Constant reference electron number density
+    \item Temperature increase much less than predicted by MHD
+    \item Density increase much greater than MHD
+    \item Rankine-Hugoniot jump conditions may not apply to lower atmosphere shocks
+    \item Observational consequences - flares?
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}{Conclusions}
+\begin{itemize}
+    \item Non-equilibrium ionisation fundamentally changes the behaviour of shocks.
+    \item Temperature jump across the shock is significantly cooler than the MHD value.
+    \item Maximum temperature within the shock also cooler.
+    \item Density increase far greater than MHD.
+    \item Rankine-Hugoniot jump conditions may not apply to lower atmosphere shocks.
+    \item How would this affect observations?
+\end{itemize}
 \end{frame}
 
 \begin{frame}{Populations at different heights}
@@ -275,91 +373,40 @@ Conservative equations (e.g., two-fluid with thermal collisions) leads to MHD sh
 \end{columns}
 \end{frame}
 
-
-\begin{frame}{Numerical model}
+\begin{frame}{Numerical simulation - mid chromosphere}
 \begin{columns}
-\begin{column}{0.4\textwidth}
-\begin{enumerate}
-\item 1D shocks in two-fluid partially-ionised plasma using (P\underline{I}P) code.
-\item Investigate shock substructure.
-\item Initial conditions produce slow-mode shock.
-\item Mimics shocks produced by Petschek-type reconnection.
-\item Equilibrium recombination timescale set to $10^{-5}$ of collisional timestep.
-\item 512000 grid cells, 1st order HLLD solver, explicit integration of source terms.
-\end{enumerate}
+\begin{column}{0.8\textwidth}
+\begin{figure}
+    %\centering
+    \includegraphics[width=0.95\linewidth,clip=true,trim=0.9cm 0.8cm 0.9cm 0.8cm]{Figures/context_midc.png}
+    %\caption{Upper-chromosphere case showing the $v_x$ velocity (top left), $B_y$ magnetic field (top right), temperature (lower left) and density (lower right). For panel c, the reference temperature $T_0=6220$.}
+    \label{fig:midchromocontext}
+\end{figure}
 \end{column}
-\begin{column}{0.6\textwidth}
-\begin{eqnarray}
-B_x &=& 0.1 \\
-B_y &=& -1.0 (x>0), 1.0 (x<0) \\
-\rho _n &=& \xi _n \rho _{tot} \\
-\rho _p &=& \xi _i \rho _{tot} = (1- \xi _n) \rho _{tot} \\
-P_n &=& \frac{\xi _n}{\xi_n + 2 \xi _i} P_{tot} =  \frac{\xi _n}{\xi_n + 2 \xi _i} \beta \frac{B_0 ^2}{2} \\
-P_p &=& \frac{2 \xi _i}{\xi_n + 2 \xi _i} P_{tot} =  \frac{2 \xi _i}{\xi_n + 2 \xi _i} \beta \frac{B_0 ^2}{2}
-\end{eqnarray}
+\begin{column}{0.2\textwidth}
+%\begin{itemize}
+    $T_0=5030$, $n_e=7.5\times 10^{16}$, $\xi_n=0.9997$
+%\end{itemize}
 \end{column}
 \end{columns}
 \end{frame}
 
-\begin{frame}{Numerical simulation - shock properties}
-\begin{figure}
-    \centering
-\includegraphics[width=0.85\linewidth,clip=true,trim=1.5cm 7.8cm 1.5cm 7.8cm]{radfull4.pdf}
-%\includegraphics[width=0.95\linewidth,clip=true,trim=0.2cm 0.1cm 1.5cm 0.1cm]{figures/radfull2.png}
-    \caption{Context figure for the equilibrium state in the MHD (black), IRIP (solid) and IR (dashed) cases. The blue (red) line is for the plasma (neutral) species for the two-fluid cases.}
-    \label{fig:radfull}
-\end{figure}
-\end{frame}
-
-\begin{frame}{Numerical simulation - energies}
-\begin{figure}
-    \centering
-%\includegraphics[width=0.85\linewidth,clip=true,trim=0.9cm 7.8cm 1.5cm 7.8cm]{rareeng2.pdf}
-\includegraphics[width=0.85\linewidth,clip=true,trim=10.9cm 7.8cm 1.5cm 7.8cm]{rareeng2.pdf}
-    \caption{Energies across the system for the MHD (black) and IRIP cases (red neutrals, blue plasma). The quantity $A_{heat}- \phi _I$ shows the balance between the heating and loss terms in the energy equation where red denotes net energy addition (heating) and blue is net energy loss (cooling).}
-    \label{fig:rareeng}
-\end{figure}
-\end{frame}
-
-\begin{frame}{Numerical simulation - slow-mode shock}
-\begin{figure}
-    \centering
-\includegraphics[width=0.85\linewidth,clip=true,trim=0.9cm 7.8cm 1.5cm 7.8cm]{radslow2.pdf}
-    \caption{Close-up of the slow mode shock for the IRIP model showing $v_x$ velocity (top left), temperature (top right) and density (lower left) for plasma (blue) and neutral (red) species. The lower right panel shows the ionisation (orange) and recombination (green) rates.}
-    \label{fig:radslow}
-\end{figure}
-\end{frame}
-
-
-\begin{frame}{Cooling through the shock}
+\begin{frame}{Shock substructure - mid chromosphere}
 \begin{columns}
-\begin{column}{0.5\textwidth}
+\begin{column}{0.8\textwidth}
 \begin{figure}
-    \centering
-%\includegraphics[width=0.95\linewidth,clip=true,trim=0.9cm 7.8cm 1.5cm 7.8cm]{figures/widthradt2_sw.pdf}
-%    \caption{Finite width of the shock as a function of upstream recombination rates.}
-    \includegraphics[width=0.95\linewidth,clip=true,trim=0.9cm 7.8cm 1.2cm 7.8cm]{shockloss.pdf}
-    \caption{Finite width of the shock (black line) as a function of the initial recombination rates. Integrated cooling for a parcel of fluid travelling through the shock is shown by the red line.}
-    \label{fig:shockwidthsw}
+    %\centering
+    \includegraphics[width=0.9\linewidth,clip=true,trim=1.2cm 0.8cm 0.9cm 0.8cm]{Figures/shocksub2_plot_midc.png}
+    %\caption{Upper-chromosphere case showing the $v_x$ velocity (top left), $B_y$ magnetic field (top right), temperature (lower left) and density (lower right). For panel c, the reference temperature $T_0=6220$.}
+    \label{fig:midchromocontext}
 \end{figure}
 \end{column}
-\begin{column}{0.42\textwidth}
-\begin{itemize}
-    \item Calculate the cooling experienced by a particle as it passes through the shock for different reference recombinaton timescales.
-    \item Particle cools because $\phi _{I} > A_{heat}$.
-    \item Molecules that should be disassociated survive interstellar medium shocks. Radiative losses decrease maximum obtained temperature and hence they survive (Drain+1993).
-    \item Possible increase in line broadening here.
-    \item Needs further study!
-\end{itemize}
+\begin{column}{0.2\textwidth}
+%\begin{itemize}
+    $T_0=5030$, $n_e=7.5\times 10^{16}$, $\xi_n=0.9997$
+%\end{itemize}
 \end{column}
 \end{columns}
-\end{frame}
-
-
-\begin{frame}{Conclusions}
-\begin{itemize}
-    \item Ionisation potential fundamentally changes the behaviour of shocks.
-\end{itemize}
 \end{frame}
 
 \end{document}
