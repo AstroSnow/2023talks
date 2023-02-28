@@ -298,6 +298,29 @@ Whole host of assumptions: constant pressure, self-similar, HD evolution, $C_1 \
 \includegraphics[width=0.85\linewidth,clip=true,trim=0.0cm 0.0cm 0.9cm 0.8cm]{2023Dundee/Figures/integrated_thermal_energy_2.png}
 \end{frame}
 
+\begin{frame}{Predicted cooling rate vs simulations}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\begin{itemize}
+    \item KHI-driven heating assumed to explain observations.
+    \item Radiative losses lead to cooling of intermediate temperature that form
+    \item KHI-induced cooling!
+    \item But also dense! Dense material leads to more emission. 
+    \item Intensity $\approx \int n_e^2 G(T) dl$
+    \item How does this look as an observable?
+\end{itemize}
+%\includegraphics[width=1.0\textwidth,clip=true,trim=1.0cm 1.0cm 1.0cm 1.0cm]{obs_shockloc_contour.png}
+\end{column}
+\begin{column}{0.4\textwidth}
+   \includegraphics[width=0.99\linewidth,clip=true,trim=58.9cm 0.8cm 8.9cm 0.8cm]{2023Dundee/Figures/denstempevo_T_t0071.png} \\
+   \includegraphics[width=0.99\linewidth,clip=true,trim=58.9cm 0.8cm 8.9cm 0.8cm]{2023Dundee/Figures/denstempevo_rho_t0071.png}
+%\includegraphics[width=0.95\linewidth]{2023Dundee/Figures/waveheating.png} 
+%\includegraphics[width=0.95\linewidth]{2023Dundee/Figures/reconnection.png} 
+%Conservative equations (e.g., two-fluid with thermal collisions) leads to MHD shock jumps, Snow \& Hillier 2019.
+\end{column}
+\end{columns}
+\end{frame}
+
 % \begin{frame}{Maximum theoretical heating/cooling}
 % \begin{columns}
 % \begin{column}{0.8\textwidth}
@@ -336,8 +359,9 @@ Whole host of assumptions: constant pressure, self-similar, HD evolution, $C_1 \
 \begin{columns}
 \begin{column}{0.4\textwidth}
 \begin{itemize}
+    \item Synthesise observation from numerical data
     \item Simple optically-thin emission $I= \int \rho^2 G(\rho,T) dl$
-    \item MgII ($\approx 10^4$), SiIV ($\approx 10^5$)
+    \item MgII ($T \approx 10^4$, orange), SiIV ($T\approx 10^5$, blue)
 \end{itemize}
 \end{column}
 \begin{column}{0.6\textwidth}
@@ -349,26 +373,7 @@ Whole host of assumptions: constant pressure, self-similar, HD evolution, $C_1 \
 \end{columns}
 \end{frame}
 
-\begin{frame}{Comparison of synthetic and real observations}
-\begin{columns}
-\begin{column}{0.8\textwidth}
-\begin{figure}
-\includegraphics[width=0.95\linewidth]{2023Dundee/Figures/KHIrl2D_thinintens_mir.png}
-    %\centering
-%    \includegraphics[width=0.95\linewidth,clip=true,trim=0.9cm 0.8cm 0.9cm 0.8cm]{Figures/contextplot.png}
-    %\caption{Upper-chromosphere case showing the $v_x$ velocity (top left), $B_y$ magnetic field (top right), temperature (lower left) and density (lower right). For panel c, the reference temperature $T_0=6220$.}
-%    \label{fig:upperchromocontext}
-\end{figure}
-\end{column}
-\begin{column}{0.2\textwidth}
-%\begin{itemize}
-%    $T_0=6220$, $n_e=7.5\times 10^{16}$, $\xi_n=0.87$
-%\end{itemize}
-\end{column}
-\end{columns}
-\end{frame}
-
-\begin{frame}{Comparison of synthetic and real observations}
+\begin{frame}{Synthetic observations - parallel to mixing layer}
 \begin{figure}
 \includegraphics[width=0.95\linewidth]{2023Dundee/Figures/KHIrl2D_dt_thinintens.png}
     %\centering
@@ -378,10 +383,17 @@ Whole host of assumptions: constant pressure, self-similar, HD evolution, $C_1 \
 \end{figure}
 \end{frame}
 
+\begin{frame}{Synthetic observations - perpendicular to mixing layer}
+\includegraphics[width=0.95\linewidth]{2023Dundee/Figures/KHIrl2D_thinintens_mir.png}
+\end{frame}
+
 \begin{frame}{Conclusions}
+\includegraphics[width=0.95\linewidth]{2023Dundee/Figures/observation.png}
 \begin{itemize}
-    \item KHI mixing can induce cooling of solar material
-    \item Manifests in observation as 'heating'
+    \item KHI mixing can induce cooling of solar material.
+    \item Analytical approximations seem to match the results well for width and loss rate.
+    \item May manifest in observation in same way as heating.
+    \item Is this observation showing heating or cooling?
 \end{itemize}
 \end{frame}
 
