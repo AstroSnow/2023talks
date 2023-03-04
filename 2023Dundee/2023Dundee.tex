@@ -155,6 +155,18 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}{KHI}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\includegraphics[width=0.95\linewidth]{2023Dundee/Figures/Wavecloudsduval.jpeg} \\
+\includegraphics[width=0.95\linewidth]{2023Dundee/Figures/khischematic.png}
+\end{column}
+\begin{column}{0.4\textwidth}
+\includegraphics[width=0.95\linewidth]{2023Dundee/Figures/jupiter.png}
+\end{column}
+\end{columns}
+\end{frame}
+
 \begin{frame}{Analytical approach}
 \begin{columns}
 \begin{column}{0.4\textwidth}
@@ -238,7 +250,7 @@ Whole host of assumptions: constant pressure, self-similar, HD evolution, $C_1 \
     \item tanh type profile centred on $T=10^5$.
     \item Negligible losses in hot and cold regions.
     \item Strong losses in the mixed plasma.
-    \item MHD (no losses), $10^5$ (mixing$>$losses), $10^3$ (mixing$\approx$losses), $10^1$ (mixing$<$losses)
+    \item MHD (no losses), $10^5$ (mixing rate$>$loss rate), $10^3$ (mixing rate$\approx$loss rate), $10^1$ (mixing rate$<$loss rate)
 \end{itemize}
 \end{column}
 \begin{column}{0.45\textwidth}
@@ -298,16 +310,18 @@ Whole host of assumptions: constant pressure, self-similar, HD evolution, $C_1 \
 \includegraphics[width=0.85\linewidth,clip=true,trim=0.0cm 0.0cm 0.9cm 0.8cm]{2023Dundee/Figures/integrated_thermal_energy_2.png}
 \end{frame}
 
-\begin{frame}{Predicted cooling rate vs simulations}
+\begin{frame}{KHI-driven cooling}
 \begin{columns}
 \begin{column}{0.6\textwidth}
 \begin{itemize}
     \item KHI-driven heating assumed to explain observations.
     \item Radiative losses lead to cooling of intermediate temperature that form
     \item KHI-induced cooling!
-    \item But also dense! Dense material leads to more emission. 
-    \item Intensity $\approx \int n_e^2 G(T) dl$
-    \item How does this look as an observable?
+   % \item But also dense! Dense material leads to more emission. 
+   % \item Intensity $\approx \int n_e^2 G(T) dl$
+    \item How does this look as an observable? Initially, no emission at $T=10^5$. 
+    \item Mixing produces intermediate temperatures and hence emission.
+    \item Increased emission in the absence of heating.
 \end{itemize}
 %\includegraphics[width=1.0\textwidth,clip=true,trim=1.0cm 1.0cm 1.0cm 1.0cm]{obs_shockloc_contour.png}
 \end{column}
@@ -319,6 +333,15 @@ Whole host of assumptions: constant pressure, self-similar, HD evolution, $C_1 \
 %Conservative equations (e.g., two-fluid with thermal collisions) leads to MHD shock jumps, Snow \& Hillier 2019.
 \end{column}
 \end{columns}
+\end{frame}
+
+\begin{frame}{Conclusions}
+\includegraphics[width=0.95\linewidth]{2023Dundee/Figures/observation.png}
+\begin{itemize}
+    \item KHI mixing can induce cooling of solar material.
+    \item Analytical approximations seem to match the results well for width and loss rate.
+    \item Is this observation showing heating or just mixing/cooling?
+\end{itemize}
 \end{frame}
 
 % \begin{frame}{Maximum theoretical heating/cooling}
