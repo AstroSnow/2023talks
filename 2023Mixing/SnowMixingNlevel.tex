@@ -39,7 +39,7 @@
 \usepackage{soul}
 \newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
 
-\title{Partially ionised shocks with collisional and radiative ionisation and recombination}
+\title{Mixing in multi-level partially ionised plasma}
 %ABSTRACT: 
 \date{}
 \author{\textbf{Ben Snow}}
@@ -53,12 +53,11 @@
 \begin{columns}
 \begin{column}{0.5\textwidth}
 \begin{itemize}
-    \item Big problem in solar physics - How is the temperature maintained against the strong losses.
-    \item Shocks intrinsically linked to heating
-    \item Adiabatic - compression of the medium
-    \item Dissipative - sharp structures so efficient viscous/Ohmic dissipation
-%    \item High frequency
-    \item Not well understood beyond the ideal MHD description.
+    \item Vastly different properties either side of the prominence-corona interface
+    \item Temperature/density increase/decrease by 2 orders of magnitude
+    \item Change in ionisation fraction - high neutral fraction in prominence, high ion fraction in corona
+    \item Neutrals are HD, plasma is MHD
+    \item Radiative losses during ionisation
 \end{itemize}
 \end{column}
 \begin{column}{0.5\textwidth}
@@ -66,44 +65,44 @@
 %\includegraphics[width=0.95\textwidth, trim=2cm 7cm 2cm 8cm,clip]{2023ECRW/Figures/steepening.pdf} \\
 %\includegraphics[width=0.95\linewidth]{2023RAS/Figures/petschek.png}
 %\includegraphics[width=0.95\linewidth]{2023RAS/Figures/shibyama.png}
-%\includegraphics[width=0.32\linewidth]{Figures/cmesketch.jpg}
+\includegraphics[width=0.9\linewidth]{2023Mixing/Figures/prominence.png}
 \end{column}
 \end{columns}
 \end{frame}
 
-\begin{frame}{Ionisation states across the interface}
-\begin{columns}
-\begin{column}{0.5\textwidth}
-\begin{itemize}
-    \item Dense \& cool
-    \item Saha equations shows medium is partially ionised
-    \item Ions are MHD-like (directly affected by the magnetic field)
-    \item Neutrals are HD-like 
-    \item Partial ionisation is known to: speed up rate of magnetic reconnection, efficient damping of Alfv\'en waves, etc....
-    \item How does partial ionisation affect shocks?VALC
-\end{itemize}
-\end{column}
-\begin{column}{0.5\textwidth}
-\includegraphics[width=0.95\linewidth]{2023ECRW/Figures/saha2_plot.png}
-%\includegraphics[width=0.32\linewidth]{Figures/Crab_Nebula.jpeg}
-%\includegraphics[width=0.95\linewidth]{2023RAS/Figures/petschek.png} \\
-%\includegraphics[width=0.95\linewidth]{2023RAS/Figures/shibyama.png}
-%\includegraphics[width=0.32\linewidth]{Figures/cmesketch.jpg}
-\end{column}
-\end{columns}
-\end{frame}
+% \begin{frame}{Ionisation states across the interface}
+% \begin{columns}
+% \begin{column}{0.5\textwidth}
+% \begin{itemize}
+%     \item Dense \& cool
+%     \item Saha equations shows medium is partially ionised
+%     \item Ions are MHD-like (directly affected by the magnetic field)
+%     \item Neutrals are HD-like 
+%     \item Partial ionisation is known to: speed up rate of magnetic reconnection, efficient damping of Alfv\'en waves, etc....
+%     \item How does partial ionisation affect shocks?VALC
+% \end{itemize}
+% \end{column}
+% \begin{column}{0.5\textwidth}
+% \includegraphics[width=0.95\linewidth]{2023ECRW/Figures/saha2_plot.png}
+% %\includegraphics[width=0.32\linewidth]{Figures/Crab_Nebula.jpeg}
+% %\includegraphics[width=0.95\linewidth]{2023RAS/Figures/petschek.png} \\
+% %\includegraphics[width=0.95\linewidth]{2023RAS/Figures/shibyama.png}
+% %\includegraphics[width=0.32\linewidth]{Figures/cmesketch.jpg}
+% \end{column}
+% \end{columns}
+% \end{frame}
 
 \begin{frame}{Aims}
 \begin{itemize}
     \item Multiple-level, non-equilibrium hydrogen model for ionisation/recombination using collsional/radiative rates in two-fluid framework.
-    \item Study how the temperature changes across a partially ionised shock.
-    \item See how the temperature jump varies with atmospheric height.
+    \item Study how KHI mixing behaves in partially-ionised systems (using collisional rates only)
+    \item Structure of losses
 \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Ionisation, recombination and ionisation potential in two-fluid shocks}
+\begin{frame}{Underlying equations}
 \footnotesize
 \begin{gather}
 \frac{\partial \rho _{\text{n}}}{\partial t} + \nabla \cdot (\rho _{\text{n}} \textbf{v}_{\text{n}})= \Gamma _{rec} \rho _{\rm p} - \Gamma _{ion} \rho _{\rm n}, \label{eqn:neutral1}\tag{5} \\
@@ -119,7 +118,7 @@
 \end{gather}
 \end{frame}
 
-\begin{frame}{Ionisation, recombination and ionisation potential in two-fluid shocks}
+\begin{frame}{Underlying equations}
 \vspace{-0.5cm}
 \footnotesize
 \begin{gather}
@@ -136,7 +135,7 @@
 \end{gather}
 \end{frame}
 
-\begin{frame}{Ionisation, recombination and ionisation potential in two-fluid shocks}
+\begin{frame}{Underlying equations}
 \vspace{-0.5cm}
 \footnotesize
 \begin{gather}
@@ -153,7 +152,7 @@
 \end{gather}
 \end{frame}
 
-\begin{frame}{Ionisation, recombination and ionisation potential in two-fluid shocks}
+\begin{frame}{Underlying equations}
 \vspace{-0.5cm}
 \footnotesize
 \begin{gather}
@@ -170,7 +169,7 @@
 \end{gather}
 \end{frame}
 
-\begin{frame}{Ionisation, recombination and ionisation potential in two-fluid shocks}
+\begin{frame}{Underlying equations}
 \vspace{-0.5cm}
 \footnotesize
 \begin{gather}
@@ -216,7 +215,7 @@
 % \end{columns}
 % \end{frame}
 
-\begin{frame}{Ionisation, recombination and ionisation potential in two-fluid shocks}
+\begin{frame}{Underlying equations}
 \footnotesize
 \begin{gather}
 \frac{\partial \rho _{\text{n}}}{\partial t} + \nabla \cdot (\rho _{\text{n}} \textbf{v}_{\text{n}})= \Gamma _{rec} \rho _{\rm p} - \Gamma _{ion} \rho _{\rm n}, \label{eqn:neutral1}\tag{5} \\
@@ -296,44 +295,77 @@
 % \end{columns}
 % \end{frame}
 
+\begin{frame}{Equilibrium}
+\begin{itemize}
+    \item Everything determined by electron temperature and number density
+\end{itemize}
+\begin{gather}
+    \rho_p \propto n_e \\
+    \xi_n=F(T_e,n_e) \xrightarrow{} \rho_n=G(T_e,n_e)
+\end{gather}
+\begin{itemize}
+    \item Therefore, total pressure depends on the reference values either side of the interface
+    \item Iterative solver for IC: 1) find equilibrium on one side. 2) specify the desired jump in electron number density. 3) Find what electron temperature satisfies constant pressure
+    \item Doesn't work across the smoothed discontinuity.
+\end{itemize}
+\end{frame}
+
 \begin{frame}{Getting an equilibrium}
 \begin{columns}
-\begin{column}{0.6\textwidth}
+\begin{column}{0.3\textwidth}
     \begin{itemize}
-        \item Want constant total pressure
+        \item Lower layer: $T=5500, \rho_p=1,\rho_n \approx 208, \xi_n\approx 0.995$ 
+        \item Lower layer: $T\approx 7319, \rho_p=30,\rho_n \approx 97, \xi_n\approx 0.764$ 
     \end{itemize}
 \end{column}
-\begin{column}{0.4\textwidth}
-
+\begin{column}{0.7\textwidth}
+\includegraphics[width=0.99\textwidth]{2023Mixing/Figures/KHInlev_initialconditions.png}
 \end{column}
 \end{columns}
 \end{frame}
 
-\begin{frame}{Numerical model}
+% \begin{frame}{Numerical model}
+% \begin{columns}
+% \begin{column}{0.5\textwidth}
+% \begin{enumerate}
+% \item KHI mixing
+% \end{enumerate}
+% \end{column}
+% \begin{column}{0.5\textwidth}
+
+% \end{column}
+% \end{columns}
+% \end{frame}
+
+\begin{frame}{Movie}
 \begin{columns}
 \begin{column}{0.5\textwidth}
 \begin{enumerate}
-\item 1D shocks in two-fluid partially-ionised plasma using (P\underline{I}P) code.
-\item Investigate shock substructure.
-\item Initial conditions produce switch-off slow-mode shock.
-\item Initial level populations determined by reference electron number density and temperature
-\item Equilibrium recombination timescale set to $10^{-5}$ of collisional timestep.
-\item 512000 grid cells, 1st order HLLD solver, explicit integration of source terms.
+\item KHI mixing
 \end{enumerate}
 \end{column}
 \begin{column}{0.5\textwidth}
-\begin{eqnarray}
-B_x &=& 0.1  \nonumber\\
-B_y &=& -1.0 (x>0), 1.0 (x<0) \nonumber \\
-\rho _n &=& \xi _n \rho _{tot} \nonumber \\
-\rho _p &=& \xi _i \rho _{tot} = (1- \xi _n) \rho _{tot} \nonumber \\
-P_n &=& \frac{\xi _n}{\xi_n + 2 \xi _i} P_{tot} =  \frac{\xi _n}{\xi_n + 2 \xi _i} \beta \frac{B_0 ^2}{2} \nonumber \\
-P_p &=& \frac{2 \xi _i}{\xi_n + 2 \xi _i} P_{tot} =  \frac{2 \xi _i}{\xi_n + 2 \xi _i} \beta \frac{B_0 ^2}{2} \nonumber
-\end{eqnarray}
+
 \end{column}
 \end{columns}
 \end{frame}
 
+\begin{frame}{Snapshot}
+\includegraphics[width=0.99\textwidth]{2023Mixing/Figures/KHInlev_testplot2.png}
+\end{frame}
+
+\begin{frame}{Losses/heating within the system}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{enumerate}
+\item KHI mixing
+\end{enumerate}
+\end{column}
+\begin{column}{0.5\textwidth}
+
+\end{column}
+\end{columns}
+\end{frame}
 
 \begin{frame}{Conclusions}
 \begin{itemize}
