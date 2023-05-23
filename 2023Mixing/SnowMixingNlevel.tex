@@ -231,6 +231,46 @@
 \end{gather}
 \end{frame}
 
+\begin{frame}{Energies of the system}
+\begin{columns}
+\begin{column}{0.3\textwidth}
+\centering
+\textbf{Macroscopic fluid energy}
+\includegraphics[width=0.9\textwidth]{2023ECRW/Figures/fluidelement.png}
+\begin{itemize}
+    \item Directly modelled
+    \item Kinetic, Magnetic, thermal
+\end{itemize}
+\end{column}
+\begin{column}{0.3\textwidth}
+\centering
+\textbf{Ionisation/excitation energy}
+\includegraphics[width=0.8\textwidth]{2023ECRW/Figures/ionenergy.png}
+\begin{itemize}
+    \item Not directly modelled but can be calculated
+    \item Non-conservative 
+    \item Energy remains 'in the system'.
+\end{itemize}
+\end{column}
+\begin{column}{0.3\textwidth}
+\centering
+\textbf{Energy loss terms}
+\begin{gather}
+    % \Gamma_{\rm rec} \rho_{\rm p} = \rho_{\rm p} (C_{\rm{p},1}+C_{\rm{p},2}+C_{\rm{p},3}+C_{\rm{p},4}+C_{\rm{p},5}) \nonumber \\
+    %     \hspace{2cm}+ \rho_{\rm{p}} (R_{\rm{p},1}+R_{\rm{p},2}+R_{\rm{p},3}+R_{\rm{p},4}+R_{\rm{p},5}) \\
+    %     \hspace{1.4cm} = \rho_p \Gamma_{\rm rec,c} + \rho_p \Gamma_{\rm rec,r}
+    \Gamma_{\rm rec} \rho_{\rm p} = \rho_{\rm p} (\hat{C}_{\rm{p},1}+\hat{C}_{\rm{p},2}+\hat{C}_{\rm{p},3}+ \nonumber \\ \hat{C}_{\rm{p},4}+\hat{C}_{\rm{p},5})/\hat{\Gamma}
+         \nonumber \\
+        \hspace{1.2cm} = \rho_{\rm p} \hat{\Gamma}_{\rm rec,col}/\hat{\Gamma} \nonumber
+\end{gather}
+\begin{gather}
+    \Gamma_{\rm ion} \rho_{\rm{n}} = (\rho_{\rm{n}1} \hat{C}_{1,\rm{p}}+\rho_{n2}\hat{C}_{2,\rm{p}}+ \nonumber \\ \rho_{\rm{n}3}\hat{C}_{3,\rm{p}}+\rho_{\rm{n}4}\hat{C}_{4,\rm{p}}+\rho_{\rm{n}5}\hat{C}_{5,\rm{p}})/\hat{\Gamma} 
+      \nonumber\\
+    \hspace{1cm} = \rho_{\rm{n}} \hat{\Gamma}_{\rm ion,col}/\hat{\Gamma} \nonumber
+\end{gather}
+\end{column}
+\end{columns}
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \begin{frame}{Energies of the system}
