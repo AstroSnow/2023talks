@@ -42,7 +42,7 @@
 \title{Mixing in multi-level partially ionised plasma}
 %ABSTRACT: 
 \date{}
-\author{\textbf{Ben Snow}}
+\author{\textbf{Ben Snow}, Andrew Hillier}
 \institute{University of Exeter \\ Modelling of Multiphase Astrophysical Media, 31st May 2023.}
 
 \begin{document}
@@ -56,6 +56,7 @@
     \item Vastly different properties either side of the prominence-corona interface
     \item Temperature/density increase/decrease by 2 orders of magnitude
     \item Change in ionisation fraction - high neutral fraction in prominence, high ion fraction in corona
+    \item Multi-threaded prominences
     \item Neutrals are HD, plasma is MHD
     \item Radiative losses during ionisation
 \end{itemize}
@@ -97,6 +98,7 @@
     \item Multiple-level, non-equilibrium hydrogen model for ionisation/recombination using collsional/radiative rates in two-fluid framework.
     \item Study how KHI mixing behaves in partially-ionised systems
     \item Heating/cooling in the mixing layer
+    \item Compare collisional, and collisional+radiative simulations.
 \end{itemize}
 \end{frame}
 
@@ -495,10 +497,11 @@
 \begin{column}{0.5\textwidth}
 \begin{enumerate}
 \item Total losses within the mixing layer
-\item Overall, heating greater than cooling
-\item System mixes to lower mean temperature 
-\item Lower mean ion fraction
-\item Collisional only so heating during recombination/de-excitation
+\item Heating far greater than cooling
+\item Radiative field exciting/ionising followed by collisional recombination/de-excitation.
+% \item System mixes to lower mean temperature 
+% \item Lower mean ion fraction
+% \item Collisional only so heating during recombination/de-excitation
 \end{enumerate}
 \end{column}
 \begin{column}{0.5\textwidth}
@@ -507,23 +510,36 @@
 \end{columns}
 \end{frame}
 
-\begin{frame}{Temperature - collisional and radiative}
-\begin{columns}
-\begin{column}{0.5\textwidth}
-\begin{enumerate}
-\item Radiative ionisation followed by collisional recombination heats the mixing layer
-\item Mixed layer hotter than the initial values
-\end{enumerate}
-\end{column}
-\begin{column}{0.5\textwidth}
-\includegraphics[width=0.99\textwidth]{2023Mixing/Figures/KHInlev_losstimeplot_rad.png}
-\end{column}
-\end{columns}
+% \begin{frame}{Temperature - collisional and radiative}
+% \begin{columns}
+% \begin{column}{0.5\textwidth}
+% \begin{enumerate}
+% \item Radiative ionisation followed by collisional recombination heats the mixing layer
+% \item Mixed layer hotter than the initial values
+% \end{enumerate}
+% \end{column}
+% \begin{column}{0.5\textwidth}
+% \includegraphics[width=0.99\textwidth]{2023Mixing/Figures/KHInlev_losstimeplot_rad.png}
+% \end{column}
+% \end{columns}
+% \end{frame}
+
+\begin{frame}{Temperature in the mixing layer}
+\includegraphics[width=0.99\textwidth]{2023Mixing/Figures/KHInlev_rad_temperature.png}
+\begin{itemize}
+    \item Radiative ionisation followed by collisional recombination heats the mixing layer
+    \item Mixed layer hotter than the initial values
+\end{itemize}
 \end{frame}
 
 \begin{frame}{Conclusions}
 \begin{itemize}
-    \item KHI-mixing in partially ionised plasma (out of plane magnetic field)
+    \item KHI-mixing in partially ionised plasma (out of plane magnetic field) - multi-threaded prominence
+    \item Radiative field important, even for small jumps.
+    \item NLTE mixing layer
+    \item Heating (and losses) within the mixing layer
+    \item Preliminary results!
+    \item Code is freely available (I/R advances in Snow+2023, under review)
 \end{itemize}
 \end{frame}
 
